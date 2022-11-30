@@ -1,0 +1,143 @@
+import os
+
+#1 - Elaborar um algoritmo para os valores a e b abaixo, que escreva sua soma, subtração, divisão e multiplicação. Utilizando variáveis.
+def ex1():
+    os.system("cls")
+    a = 10
+    b = 5
+    print("""1...Soma
+2...Subtração
+3...Divisao
+4...Multiplicação""")
+    escolha=int(input("Escolha a operação: "))
+    match escolha:
+        case 1:
+            x=a+b
+            print( "O resultado da operação é",x)
+        case 2:
+            x=a-b
+            print("O resultado da operação é",x)
+        case 3:
+            x=a/b
+            print("O resultado da operação é",x)
+        case 4:
+            x=a*b
+            print("O resultado da operação é",x)
+
+# 2 - Fazer um algoritmo que calcule as raízes da equação do segundo grau (x²+2x-15) utilizando a fórmula de Bhaskara.
+def ex2():
+    os.system("cls")
+    import math
+    a = 1
+    b = 2
+    c = -15
+
+    delta = b**2 - (4*a*c)
+    print ("O valor de delta é de: ",delta)
+    raiz = math.sqrt(delta)
+    print("A raiz de delta é",raiz)
+    x1 = (-b + raiz)/(2*a)
+    x2 = (-b - raiz)/(2*a)
+
+    print("O valor de x1 é: ",x1,"\n O valor de x2 é: ",x2)
+
+# 3 - Faça um algoritmo que calcule o combustível gasto em uma viagem de 2000 Km, com autonomia de 10 litros/Km.
+def ex3():
+    os.system("cls")
+    km = 2000
+    autonomia = 10
+    gasto = km * autonomia
+    print("Foram gastos",gasto,"litros de gasolina!!!")
+
+# 4 - Faça um algoritmo que calcule o IMC de uma pessoa de 1.80m de altura e pesa 80Kg.
+def ex4():
+    os.system("cls")
+    peso = int(input("Qual o seu peso: "))
+    altura = float(input("Qual a sua altura: "))
+
+    imc = peso/altura**2
+    imc = float(imc)
+    print(round(imc, 2))
+#9 - Faça um algoritmo que leia um nº inteiro e mostre uma mensagem indicando se este número é par ou ímpar, e se é positivo ou negativo.
+def ex5():
+    os.system("cls")
+    num=int(input("Digite um número: "))
+    if num%2==0:
+        print("Número é par")
+    else:
+        print("Número é impar")
+    if num > 0:
+        print("Número é positivo")
+    else:
+        print("Número é negativo")
+#10 - Elabore um algoritmo que leia do teclado o sexo de uma pessoa. Se o sexo digitado for M ou F, escrever na tela
+# “Sexo válido!”. Caso contrário, informar “Sexo inválido!”;
+
+def ex6():
+    os.system("cls")
+    sexo=input("Digite o seu sexo <M><F>: ")
+    sexo = sexo.upper()
+    if sexo == 'M' or sexo == 'F':
+        print("Sexo Válido")
+    else:
+        print("Sexo Inválido")
+#6 - Escrever um algoritmo que lê o as 3 notas obtidas por um aluno e calcula a média das notas.
+def ex7():
+    os.system("cls")
+    nota1=int(input("Digite a primeira nota: "))
+    nota2=int(input("Digite a segunda nota: "))
+    nota3=int(input("Digite a terceira nota: "))
+    media= (nota1+nota2+nota3)/3
+    print("A média das notas digitadas é de:",media)
+#7 - Escrever um algoritmo que leia o código do item pedido, a quantidade e calcule o valor a ser pago por aquele lanche.
+def ex8():
+    os.system("cls")
+    codigo=int(input("Digite o código do produto(1515): "))
+    quantidade=int(input("Digite a quantidade do produto: "))
+    if codigo==1515:
+        valor=39.90
+    valorfinal=quantidade*valor
+    print("O valor final ficou em",valorfinal)
+
+#Elabore um algoritmo que leia o tamanho do lado de um quadrado e informe a área e o perímetro do quadrado. (Perímetro = 4 * L; área =L ^ 2)
+def ex9():
+    os.system("cls")
+    lado=int(input("Informe o lado do quadrado: "))
+    perimetro=4*lado
+    area=lado**2
+    print("O perimentro do quadrado é",perimetro)
+    print("A área quadrado é",area)
+
+menu='x'
+while menu:
+    print(":::INDICE EXERCICIOS PYTHON:::")
+    print(""":::1..EXERCICIO (SOMA,SUBTRAÇÃO,DIVISÃO,MULTIPLICAÇÃO):::
+:::2..EXERCICIO (BHASKARA):::
+:::3..EXERCICIO (COMBUSTIVEL GASTO):::
+:::4..EXERCICIO (IMC):::
+:::5..EXERCICIO (PAR,IMPAR,POSITVO,NEGATIVO)::::
+:::6..EXERCICIO (SEXO VÁLIDO,M OU F)::::
+:::7..EXERCICIO (MÉDIA DE 3 NOTAS)::::
+:::8..EXERCICIO (LANCHE, QUANTIDADE)::::
+:::9..EXERCICIO (ÁREA E PERIMETRO)::::
+""")
+    indice=int(input("ESCOLHA O EXERCICIO A SER VIZUALIZADO: "))
+    match indice:
+        case 1:
+            ex1()
+        case 2:
+            ex2()
+        case 3:
+            ex3()
+        case 4:
+            ex4()
+        case 5:
+            ex5()
+        case 6:
+            ex6()
+        case 7:
+            ex7()
+        case 8:
+            ex8()
+        case 9:
+            ex9()
